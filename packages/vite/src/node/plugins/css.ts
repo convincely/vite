@@ -802,8 +802,12 @@ async function compileCSS(
   // crawl them in order to register watch dependencies.
   const needInlineImport = code.includes('@import')
   const hasUrl = cssUrlRE.test(code) || cssImageSetRE.test(code)
-  const lang = id.match(CSS_LANGS_RE)?.[1] as CssLang | undefined
+  let lang = id.match(CSS_LANGS_RE)?.[1] as CssLang | undefined
   const postcssConfig = await resolvePostcssConfig(config, getCssDialect(lang))
+
+  if (needInlineImport) {
+    lang = 'scss';
+  }
 
   // 1. plain css that needs no processing
   if (

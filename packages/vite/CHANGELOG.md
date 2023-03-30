@@ -1,3 +1,9 @@
+## <small>4.2.2 (2023-03-30)</small>
+
+* chore: scss has imports ([96be1cd](https://github.com/vitejs/vite/commit/96be1cd))
+
+
+
 ## <small>4.2.1 (2023-03-20)</small>
 
 * fix: add `virtual:` to virtual module source map ignore (#12444) ([c4aa28f](https://github.com/vitejs/vite/commit/c4aa28f)), closes [#12444](https://github.com/vitejs/vite/issues/12444)
